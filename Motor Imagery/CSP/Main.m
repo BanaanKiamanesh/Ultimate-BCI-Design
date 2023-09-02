@@ -50,8 +50,8 @@ for i = AvailableData
     Data = filtfilt(b, a, Data);
 
     %% Spatial Filtering
-    Data = CAR(Data);                       % Common Average Filtering(CAR)
-    % Data = LLaplacian(Data, Xpos, Ypos);    % Low Laplacian Filter
+    % Data = CAR(Data);                       % Common Average Filtering(CAR)
+    Data = LLaplacian(Data, Xpos, Ypos);    % Low Laplacian Filter
     % Data = HLaplacian(Data, Xpos, Ypos);    % High Laplacian Filter
 
     %% Data Trial Seperation
