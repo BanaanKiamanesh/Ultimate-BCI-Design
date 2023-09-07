@@ -50,8 +50,8 @@ for i = AvailableData
     Data = filtfilt(b, a, Data);
 
     %% Spatial Filtering
-    % Data = CAR(Data);                       % Common Average Filtering(CAR)
-    Data = LLaplacian(Data, Xpos, Ypos);    % Low Laplacian Filter
+    Data = CAR(Data);                       % Common Average Filtering(CAR)
+    % Data = LLaplacian(Data, Xpos, Ypos);    % Low Laplacian Filter
     % Data = HLaplacian(Data, Xpos, Ypos);    % High Laplacian Filter
 
     %% Data Trial Seperation
@@ -203,3 +203,4 @@ end
 % [2] H. Ramoster, J. M. Gerking, and G. Pfurtscheller, "Optimal spatial filtering of single trial EEG during imagined hand movement" IEEE Trans. Rehab. Eng. 2000
 % [3] X. Yu, Ph. Chum, K. Sim, "Analysis the effect of PCA for feature reduction in non-stationary EEG based motor imagery of BCI system", 2013
 % [4] https://en.wikipedia.org/wiki/Common_spatial_pattern
+% DataSet ==> BCI-CompetitionIVa
