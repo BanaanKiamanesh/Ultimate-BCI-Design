@@ -8,13 +8,15 @@ rng(123, 'twister')
 %% Code
 
 % Available Data Classes
-AvailableData = ['l', 'w'];
+AvailableData = 'lw';
+% AvailableData = 'abcdefg';
 
-for i = AvailableData
+for Sbj = AvailableData
 
     %% Load Data
     % Create File Name and Load Data into WorkSpace
-    FileName = ['BCI-competitionIVa/data_set_IVa_a', i, '.mat'];
+    FileName = ['BCI-competitionIVa/data_set_IVa_a' Sbj '.mat'];
+    % FileName = ['BCI-competitionIV\BCICIV_calib_ds1' Sbj '_100Hz.mat'];
     load(FileName);
 
     Data = double(cnt) * 0.1;       % Actual Data in Micro Volts
@@ -147,7 +149,7 @@ for i = AvailableData
     % Accuracy using Confusion Matrix
     Accuracy = (trace(ConfusionMatrix)) / sum(ConfusionMatrix, 'all');
 
-    fprintf('Accuracy of Subject %c using LDA Classifier is %.3f\n', i, Accuracy);
+    fprintf('Accuracy of Subject %c using LDA Classifier is %.3f\n', Sbj, Accuracy);
 
     %% Classification Using SVM
     % Classify Using SVM with 10-Fold Cross Validation
@@ -170,7 +172,7 @@ for i = AvailableData
     % Accuracy using Confusion Matrix
     Accuracy = (trace(ConfusionMatrix)) / sum(ConfusionMatrix, 'all');
 
-    fprintf('Accuracy of Subject %c using SVM Classifier is %.3f\n', i, Accuracy);
+    fprintf('Accuracy of Subject %c using SVM Classifier is %.3f\n', Sbj, Accuracy);
 
     %% Classification Using KNN
     % Classify Using KNN with 10-Fold Cross Validation
@@ -193,7 +195,7 @@ for i = AvailableData
     % Accuracy using Confusion Matrix
     Accuracy = (trace(ConfusionMatrix)) / sum(ConfusionMatrix, 'all');
 
-    fprintf('Accuracy of Subject %c using KNN Classifier is %.3f\n', i, Accuracy);
+    fprintf('Accuracy of Subject %c using KNN Classifier is %.3f\n', Sbj, Accuracy);
     disp("=====================================================================")
 
 end
