@@ -31,8 +31,7 @@ function Rho = CCA(A, B)
     % Eigen Value Decomposition
     A = inv(C_yy + eps) * C_yx * inv(C_xx + eps) * C_xy;
 
-    [~, Lambda] = eig(A);
-    Lambda = diag(real(Lambda));
+    Lambda = eig(A);
     Lambda = sort(Lambda, 'descend');
 
     Rho = sqrt(Lambda(1:p));
