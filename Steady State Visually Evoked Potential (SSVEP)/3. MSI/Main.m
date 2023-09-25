@@ -17,7 +17,7 @@ Channels = [1 2];
 % Channel Filtering
 Data = Data(:, Channels, :);
 
-%% CCA Algorithm Application
+%% MSI Algorithm Application
 
 % Reference Signal Creation
 Duration = 5;                       % Signal Duration in Seconds
