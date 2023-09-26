@@ -77,3 +77,10 @@ disp(['Total Accuracy: ', num2str(TotalAccuracy), ' %'])
 disp(['Class 1 Accuracy: ', num2str(Acc1), ' %'])
 disp(['Class 2 Accuracy: ', num2str(Acc2), ' %'])
 disp(['Class 3 Accuracy: ', num2str(Acc3), ' %'])
+
+%% Notes
+% For the features the whole CCA correlation coefficients can be used.
+% But that way the feature vector will be many times bigger.
+% We can apply a feature selection section. That over complicates the problem
+% and there will not be a huge difference in the results. So I prefer
+% sticking to this principle for now.
