@@ -17,6 +17,14 @@ Channels = [1 2 3];
 % Channel Filtering
 Data = Data(:, Channels, :);
 
+%% Pre-Processing
+% Filter Design
+[b, a] = butter(3, [11, 100] / (Fs/2), 'bandpass');
+
+for i = 1:size(Data, 3)                     % For Each Trial
+    Data(:, :, i) = filtfilt(b, a, Data(:, :, i));
+end
+
 %% CCA Algorithm Application
 
 % Reference Signal Creation
